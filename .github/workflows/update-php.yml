@@ -21,7 +21,7 @@ jobs:
       - run: sed -i 's/ENV PHP_VERSION 8.2.*-/ENV PHP_VERSION ${{steps.version.outputs.prop}}-/g' Dockerfile
       - run: rm version.json
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5.0.1
+        uses: peter-evans/create-pull-request@v5.0.2
         with:
             token: ${{ secrets.PAT }}
             commit-message: 'PHP ${{steps.version.outputs.prop}}'
