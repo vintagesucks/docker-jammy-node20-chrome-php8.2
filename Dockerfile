@@ -1,5 +1,5 @@
 FROM ubuntu:jammy
-
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ENV DEBIAN_FRONTEND=noninteractive
 
 # install essential packages, repos, Node.js, Yarn and Google Chrome
@@ -40,5 +40,5 @@ RUN apt update && apt install -y --no-install-recommends \
   && curl -sS https://getcomposer.org/installer | php -- \
     --install-dir=/usr/local/bin --filename=composer \
   # smoke tests
-  && php --version \
+  && [[ $(php --version) == *"PHP 8.2"* ]] \
   && composer --version
