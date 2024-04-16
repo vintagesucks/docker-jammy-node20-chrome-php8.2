@@ -33,6 +33,7 @@ RUN apt update && apt install -y --no-install-recommends \
     php8.2-intl=$PHP_VERSION \
     php8.2-mbstring=$PHP_VERSION \
     php8.2-mysql=$PHP_VERSION \
+    php8.2-redis=6.* \
     php8.2-sqlite3=$PHP_VERSION \
     php8.2-xml=$PHP_VERSION \
     php8.2-zip=$PHP_VERSION \
